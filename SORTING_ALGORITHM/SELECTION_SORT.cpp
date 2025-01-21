@@ -12,7 +12,7 @@ void selectionSort(int a[], int n) {
                 maxIdx = j;
             }
         }
-        // Swap the elements without using a header file
+        // Swap the elements
         int temp = a[i];
         a[i] = a[maxIdx];
         a[maxIdx] = temp;
