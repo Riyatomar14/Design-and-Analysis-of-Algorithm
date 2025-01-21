@@ -18,3 +18,8 @@ void selectionSort(int a[], int n) {
         a[maxIdx] = temp;
     }
 }
+" 
+  Time complexity --> 
+  Best case : 0(n^2)
+  Average case : 0(n^2)
+  Worst case : 0(n^2)   "
