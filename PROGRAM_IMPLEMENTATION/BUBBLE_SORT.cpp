@@ -2,13 +2,13 @@
 using namespace std;
 
 void bubbleSort(int a[], int n) {
-    for (int i = n - 1; i >= 1; i--) { // Outer loop for passes
-        for (int j = 1; j <= i; j++) { // Inner loop for comparisons
-            if (a[j - 1] > a[j]) { // Compare adjacent elements
+    for(int i = 0; i< n-1; i++){ // Outer loop for passes
+        for(int j = 0; j < n-1-i ; j++){ // Inner loop for comparisons
+            if(arr[j] > arr[j+1]){ // Compare adjacent elements
                 // Swap elements
                 int temp = a[j];
-                a[j] = a[j - 1];
-                a[j - 1] = temp;
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
     }
