@@ -1,23 +1,24 @@
 " Sorting is the process of arranging items systematically, ordered by some criterion.
   Given an array of n items
-1. Find the largest item x, in the range of [0......n−1]
+1. Find the smallest item x, in the range of [0......n−1]
 2.Swap x with the (n−1)th item
-3. Reduce n by 1 and go to Step 1 "
+3. increase j by 1 and go to Step 1 "
 
 void selectionSort(int a[], int n) {
-    for (int i = n - 1; i >= 1; i--) {
-        int maxIdx = 0; // Assume the first element is the max
-        for (int j = 1; j <= i; j++) { // Find the max in the range [0, i]
-            if (a[j] > a[maxIdx]) {
-                maxIdx = j;
+    for (int i = 0; i < n - 1; i++) { // Iterate up to n-2
+        int minIdx = i; // Assume the first unsorted element is the smallest
+        for (int j = i + 1; j < n; j++) { // Find the minimum in the remaining array
+            if (a[j] < a[minIdx]) { // If we find a smaller element
+                minIdx = j;
             }
         }
-        // Swap the elements
+        // Swap the smallest element found with the first element of the unsorted part
         int temp = a[i];
-        a[i] = a[maxIdx];
-        a[maxIdx] = temp;
+        a[i] = a[minIdx];
+        a[minIdx] = temp;
     }
 }
+
 " 
   Time complexity --> 
   Best case : O(n^2)
