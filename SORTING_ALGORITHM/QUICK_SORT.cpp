@@ -9,12 +9,12 @@ Quick Sort is a divide-and-conquer algorithm
  Do nothing!
 "
 " In comparison, Merge Sort spends most of the time in conquer step but very little time in divide step"
-// Function to partition the array
-int partition(int a[], int low, int high) {
-    int pivot = a[high]; // Pivot element
-    int i = low - 1;     // Index of smaller element
+// Function to partition the array--> this function find the correct position of the pivot element and return its index to the merge function
+int partition(int a[], int p, int r) {
+    int pivot = a[r]; // Pivot element->last element
+    int i = p - 1;     // i at 0 index
 
-    for (int j = low; j < high; j++) {
+    for (int j = p; j < r; j++) {
         // If current element is smaller than or equal to pivot
         if (a[j] <= pivot) {
             i++; // Increment index of smaller element
@@ -22,8 +22,8 @@ int partition(int a[], int low, int high) {
         }
     }
     // Place the pivot in its correct position
-    swap(a[i + 1], a[high]);
-    return i + 1; // Return the partition index
+    swap(a[i + 1], a[r]);
+    return i + 1; // Return the partition index to quicksort
 }
 
 // Quick Sort function
