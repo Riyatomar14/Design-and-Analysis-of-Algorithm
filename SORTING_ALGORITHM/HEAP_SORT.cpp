@@ -46,6 +46,6 @@ void heapSort(int a[], int n) {
 }
 
 "
-time xomplexity : O(nlogn)
+time complexity : O(nlogn)
 "
 
